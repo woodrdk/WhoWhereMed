@@ -1,0 +1,44 @@
+﻿@model WhoWhere.Models.People
+
+@{
+    ViewBag.Title = "People add Information to database";
+}
+
+<h2>Add your searchable information here.</h2>
+
+@if (ViewBag.Added != null)
+{
+    <h3>Student was added!</h3>
+}
+
+@*<form action="~/studentmodelbinding/create" method="post"></form>*@
+@*    this is the same as the form tags as above                   *@
+@*    posts to the same url (same controller/ action)              *@
+
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+    @Html.ValidationMessageFor(m => m.FirstName)
+    <br />
+
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+    @Html.ValidationMessageFor(m => m.LastName)
+    <br />
+
+    @Html.LabelFor(m => m.DateOfBirth)
+    @Html.TextBoxFor(m => m.DateOfBirth)
+    @Html.ValidationMessageFor(m => m.DateOfBirth)
+    <br />
+
+    <input type="submit" value="Add To Database" />
+    <br />
+
+    @Html.LabelFor(m => m.Para)
+    @Html.CheckBoxFor(m => m.Para)
+    @Html.ValidationMessageFor(m => m.Para)
+    
+   
+}
